@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechJara - Compras al mejor precio</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="EstilosTechJara/TechJara.css">
+    <link rel="stylesheet" href="EstilosTechJara/menuTechJara.css">
+</head>
+<body>
+    <header>
+       <!-- <div class="checkMenus"> checkbox para desplegar menus, (sesion 9)
+              <input type="checkbox" id="menu-burger2">
+        </div>-->
+         <nav class="menuDePagina1">
+             <ul>
+                <li><a href="#Inicio" >Inicio</a></li>
+                <li><a href="#Tiendas" >Tiendas</a></li>
+                <li><a href="#Servicios" >Servicios</a></li>
+                <li>
+                    <a href="#promociones">PROMOCIONES MENSUALES</a>
+                    <ul class="opcionPromocion">
+                          <li><a href="#Promo50%">50% descuento</a></li>
+                          <li><a href="#PuntosCompras">Puntos de Compras</a></li>
+                          <li><a href="#CuotasSinIntereses">Cuotas sin intereses</a></li>
+                     </ul>
+               </li>
+                <li> <a href="#Ayuda">Centro de Ayuda</a></li>
+                </ul>
+            </nav>
+            <nav class="menu2">
+                 <ul>
+                    <h1>TechJara</h1>
+                    <li>
+                         <input type="checkbox" id="menu-burger1">
+                         <label for="menu-burger1" class="Burger1"><i class="fa-solid fa-bars"></i>Categorias</label>
+                         <ul class="SubmenuCategorias">
+                            <li><a href="">Celulares</a></li>
+                            <li><a href="">Cargadores</a></li>
+                            <li><a href="">Scooters</a></li>
+                            <li><a href="">Componentes PC</a></li>
+                            <li><a href="">Laptops</a></li>
+                            <li><a href="">Consolas</a></li>
+                            <li><a href="">Software</a></li>
+                            <li><a href="">Perifericos</a></li>
+                            <li><a href="">Monitores e impresoras</a></li>
+                           <li><a href="">Conectividad y redes</a></li>
+                           <li><a href="">Tv y SmartTV</a></li>
+                         </ul>
+                    </li>
+                    <li class="barraBuscador"><input type="text" id="buscador" placeholder="busca tus componentes"></li>
+                    <li><a href="">Arma tu pc</a></li>
+                    <li class="usuario">Hola, Usuario
+                        <ul class="menuInicioSesion">
+                          <li><a href="">Registrarse</a></li>
+                          <li><a href="">Iniciar sesion</a></li>
+                        </ul>
+                    </li>
+
+                 </ul>
+            </nav>        
+    </header>
+    <main>
+        <div class="ventana">
+            <p>aqui ira algo</p>
+        </div>
+        <section id="Inicio">
+          <div>
+            <div class="inicio">
+                  <h2>Inicio</h2>
+                  <p>Lo ultimo en tecnologia, encuentra los mejores perifericos, equipos y muchas cosas mas de las mejores marcas en el mercado 
+                    <br>
+                    Garantia y excelencia en un solo lugar
+                  </p>
+            </div>
+            <div id="listaDeMarcas">
+                <ul>    
+                    <li><img id="intelLogo" alt="IntelMarca" title="IntelMarca" src="imagenes/Intel-Core-Logo.png"/></li>
+                    <li><img id="ryzenlogo" src="imagenes/Ryzen logo.webp"alt="RyzenMarca"></li>
+                    <li><img id="samsungLogo" src="imagenes/Samsung-Logo-1993-2005.png"alt="RyzenMarca"></li>
+                    <li><img src="imagenes/Xiaomi logov2.png"></li>
+                    <li><img src="imagenes/canonLogo.png" id="canonlogo"></li>
+                    <li><img src="imagenes/HP-Logo.png"></li>
+                    <li><img src="imagenes/PlayStation-Logo.png"></li>
+                    <li><img src="imagenes/nvidiaLogo.png"></li>
+                    <li><img src="imagenes/avastlogo.png" id="avastlogo"></li>
+                    <li><img src="imagenes/razerLogo.webp"></li>
+                
+                  
+                </ul>
+            </div>
+          </div>
+        </section>
+        <section id="promociones">
+              <h2>Promociones</h2>
+              <div class="Promos" id="Promo50%">
+                <h3>50% DESCUENTO</h3>
+                <div class="promAct">
+                     <img src="" alt="">
+                     <p>marca</p>
+                     <p class="Prod"><span class="IdProd">ID: 123</span><span class="unidad"> 45</span></p>
+                     <p><span class="Descuento">50%</span><del>5000</del></p>
+                </div>
+              </div>
+              <div class="Promos" id="PuntosCompras">
+                 <h3>Puntos de Compras</h3>
+              </div>
+              <div class="Promos" id="CuotasSinIntereses">
+                  <h3>Cuotas sin intereses</h3>
+              </div>
+        </section>
+        <section id="Tiendas">
+             <h2>Tiendas</h2>
+
+        </section>
+        <section id="Servicios">
+            <h2>Servicios</h2>
+
+        </section>
+    </main>
+    <footer>
+         <p>  © 2026 TechJara - Todos los derechos reservados</p>
+    </footer>
+    
+</body>
+<script src="TechJara.js"></script>
+</html>

@@ -1,0 +1,72 @@
+
+/*MODIFICACIONES EN EL MENU 2*/
+#menu2{ /*el menu 2*/
+    background-color: var(--colorIdentificador);
+    padding: 1.5%; /*tienen un paddinf de l1,5% con respecto al acnho de su padre*/
+}
+#menu2 li{ /*todos los li de menu 2*/
+    padding-top: 11px; /*tienen n padding superior de 11px con el fin de que se alinea con el input*/
+
+}
+#menu2 > ul{ /* los hijos directos ul de menu2 */
+   display: flex; /*se vuelven cajas flexibles tiopo row*/
+   justify-content: space-around; /*sus elementos tienen ase hubanc de manera ordenada donde crea espacios entre elementos
+   sin embargo tambien un esppacio entre el borde del padre y estos mismos*/
+   padding: 0 5% 0 5%; /* el paddin de arriba e 0 el de la derecha es 5% del ancho del padre
+    el de abajo es 0 y el de la izquierda es 5%*/
+   list-style: none;
+}
+#menu2 > ul li:nth-child(1){ /*el li primer hijo de ul hijo directo de nmenu2*/
+   position: relative; /*tiene un valor relativo*/
+}
+.SubmenuCategorias{
+    display: none; /* esta clase se oculta*/
+    position: absolute; /*su poscion es abosluta */
+    top: 100%; /*se hubica por debajo del padre un 100% dfe su tamaño*/
+    left: 20%; /*se ubica 20% hacia a la derecha del tamaño del padre*/
+    background-color:var(--colorActivo);
+    border: 1px solid black;
+    min-width: 300px;
+    min-height: 250px; /*aqui crece cuando el tamaño de los elemento internos tambien*/
+}
+.SubmenuCategorias a{
+    display: block; /*les doy un tamaño de bloque para quue en modo caja sean mucho mas facil maipular*/
+    padding: 5px 10px;
+    color: black;
+}
+#menu-burger1:checked ~ .SubmenuCategorias { /*cuando el menu checkbox este checked busca a su hermano submenu y ejecuta las siguiente propiedades*/
+  /*"Selecciona todos los elementos con la clase ssubcategoria que sean hermanos de menuburger y que aparezcan después de menuburger dentro del mismo elemento padre."*/
+    display: block; /* se mostrarar el subcategoria hermano directo de menuburger cuando este con el checck*/
+}
+
+.menuInicioSesion{
+   display: none; /* el menu de inicio esta en diplay none*/
+   position: absolute; /* posicion abosluta  hijo de vul li nth 4*/
+   top: 80%; /* se posicion a un 80% por debajo del tamaño del padre*/
+   background-color: var(--colorActivo);
+   min-height: 80px; /*tamaño minimo de 80px*/
+   min-width: 100px;
+
+}
+.menuInicioSesion a{ /* todos los a de inicioSesion*/
+    padding: 5px 10px; 
+    color: black;
+}
+#menu2 >ul li:nth-child(4){
+    position: relative; /*el 4 hijo de ul hijo directo de menu2 tiene la poscion relativa par que su hjo absoluto tenga referencia */
+}
+#usuario:hover .menuInicioSesion{ /*nota esto de busqueda de lemento solo aplica a hijos o hermanos (segun selector) no puede ir hacia atras esta busqueda ni hacia otros elelmentos que no cumplan con la condicion*/
+    display: block; /*al tener el mouse sobre usuario busca a menuusuario  */
+}
+#menu2 > ul > li:hover{
+    text-decoration: underline;
+    transition: 0.3s; 
+}
+.barraBuscador{
+    padding-top: 0px !important; /*sobrepone esta propiedad aun cuando tiene una jeraraquia menor (no abusar de ello)*/
+}
+#buscador{
+    border: 0;
+    width: 400px;
+    height: 40px;
+}

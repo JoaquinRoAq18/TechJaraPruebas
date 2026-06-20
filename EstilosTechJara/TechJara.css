@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+/*
+// <weight>: Use a value from 200 to 800
+// <uniquifier>: Use a unique and descriptive class name
+
+.bricolage-grotesque-<uniquifier> {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+*/
+
+/*variables y selectores universales*/
+:root{
+    --colorIdentificador: rgb(0, 101, 108); /*creacion de variables colores y fuentes de texto*/
+    --colorSecundario: rgb(52, 52, 58);
+    --colorInteraccion: rgb(188, 204, 204);
+    --colorActivo: aqua;
+    --fuenteLetra1: "Bricolage Grotesque", sans-serif;
+    --colorFondoBox: white;
+}
+*{ 
+    scroll-behavior: smooth; /*hago que al bajar por la pagina sea suave, notable con el redireccionamiento dentro de la pagina*/
+    box-sizing: border-box; /*aqui hago que el tamaño exacto de cada caja sea exacto a la hora de definir height y width, el padding y margin creo que
+     se adaptan para que se cumplan con los valores*/
+    margin: 0; /* aqui defino que todos los elementos en esta pagina tengan por defecto un margen y padding de 0*/
+    padding: 0;
+    
+}
+header{ /* en header*/
+    display: flex; /*hago que la caja osea el header sea flexible, puedo modiifcar lo elementos en una sola dimension*/
+    flex-direction: column; /*la direccion de los elementos es column por lo que se mostraran de manera vertical*/
+    color: azure; /*The color of the text will azure*/
+    position: sticky; /*hago que la posicion del header sea sticky, por lo que puedo fijarlo y ser relativo (fijo dentro del elemento padre, puedo moverlo sin que naduie ocupe su espacio original)*/
+    top: 0; /*aca presisamente lo configuro, al ser top 0 se posiciona arriba ya que no hay espacio que lo mueva hacia abajo*/
+    font-family: var(--fuenteLetra1); /*the font family has a variable valor*/
+}
+/*.checkMenus{
+    display: none;
+}*/ 
+input[type="checkbox"]{
+    display: none; /*todos los input tipo check, se ocultan, ya no se ven aunque esten ahi, si pueden ocupar su espacio */
+}
+section{
+    min-height: 100vh; /*la seccion tiene un tamaño minimo de 100 view height osea del tamaño de la panatlla esta púde crecer mientra mas contenido se agruege*/
+    scroll-margin-top: 160px; /*al hacer el scroll en direccionamiento interno el limite superior de la pagina quedara a 160px de la seccion*/
+}
+div{ /*igual al div*/
+    scroll-margin-top: 150px;
+}
+a{ /*a todos las etiquetas a*/
+    text-decoration: none; /*la decoracion del texto que tienen se le s quita*/
+    color: azure; 
+    
+}
+li{
+    list-style-type: none; /*todos las etiqeutas li se les quita si adorno de listado*/
+}
+footer{
+  background-color: black; /*el footer se le da un color de fondo negro*/
+  color: white;
+  text-align: center; /*se alinea el texto al medio*/
+}
+body{
+    background-color: var(--colorInteraccion);
+}
+
+
+
+
+
+
+/*configuraciones de este menu y aspectos internos*/
+.menuDePagina1 > ul{ /*todos los hijos directos de menuPagina tendran las siguientes propiedades*/
+    display: flex; /*caja flexible*/
+    justify-content: right; /*el posicionamiento de sus elementos en este  caso en row por defecto sera hacia la derecha*/
+    margin: 0; /*no tienen ningun va,lor en su margen*/
+    gap: 30px; /*la separacion de los elementos es de 30px, ojo que el espacio es especial solo aplicado en caso de flex, nno es un margin*/
+    list-style-type: none; /*les quita si adorno de listado*/
+}
+.menuDePagina1{
+    background-color: var(--colorSecundario); /* el color de fondo tieen el valor de una variable creada*/
+    padding: 1%; /*el padding adopta el 1% del tamaño del ancho del padre*/
+}
+.menuDePagina1 a{/* todos los descendientes a de menu de pagina*/
+    padding: 20px 20px; /*tun padding de ariba y abajo de 20px, derecha e izquierda de 20 px*/
+}
+.menuDePagina1 > ul > li > a:hover{ /* el a hijo directo de li, hijo directo de ul hijo directo de menu depagina, al tener el mouse sobre el*/
+    background-color: var(--colorInteraccion); /*cambiara su color de fondo*/
+    color: black; /* sus letrass se harn color negor*/
+    transition: 0.3s;  /*esta cambio se efectuara a lo largo 0,3 s y se mantedra siempre y cuando si ga poscionado el cursor sobre el*/
+}
+.menuDePagina1 > ul > li > a:active{ /*el a hijo de li, hijo de ul hijo de menu de pagina, mientrea mantengas clicakdo */
+   background-color:var(--colorActivo); /*cambiara de color de fonfo*/
+}
+.menuDePagina1 > ul li:nth-child(4){ /*solo el 4 hijo es seleccionado de esa ul*/
+    position: relative; /*adoptra una poscion relativa, es decir que es posible modificar su moviientosin que su espacio se ocupe por otros elementos*/
+} 
+.opcionPromocion{ /*la clase opci9n promocio*/
+    display: none; /*se oculta*/
+    position: absolute; /*su posicion es abosluta, */
+    top: 160%;/*se modifica su posicioncon referente a su padre, es decir se mueve 160% del alto de su padre, su posicion esta fuera del flujo normal*/
+    background-color: var(--colorSecundario) ; /**/
+   list-style-type: none;
+   width: 100%; /*tiene un anncho del 100% osea es igual al ancho de us padre*/
+   z-index: 1000; /*esto de aqui solo funcnona en elementos con poscion diferetnte al static, con esto se sobrepone a otod es decir esta delante de cualquier elemtno*/
+}
+.menuDePagina1 > ul li:nth-child(4):hover .opcionPromocion{ /*cuando este en hover busca ca opcion promocion y ejecutas la siguientes propiedades*/
+    display: block; /*se mostrara pas de none a block*/
+
+}
+.opcionPromocion li, .opcionPromocion a{ /*tanto todos los el li como el a de la opcion promocion*/
+    height: 30px ; /*daoptan una altura de 30px*/
+    padding: 7.5px 10px; /*padding arriba abajo de 7.5 px y derecha izquierda de 10px*/
+    
+}
+.opcionPromocion a{ /*todos los a de la opcion promociion */
+    display: block; /*se les da un duiplay de bloqyue por lo que ocupan toda el ancho de su padre*/
+    padding: 0; /*no tienen ningun padding*/
+}
+.opcionPromocion li:hover{ /*cuando el mouse este sobre el todos los li de opcion promocion*/
+    background-color: var(--colorInteraccion);
+    color: black;
+    transition: 0.3s;  /*la tracsiocion a estos cambios se realliza en 0,3s*/
+
+}
+
+
+/*MODIFICACIONES EN EL MENU 2*/
+.menu2{ /*el menu 2*/
+    background-color: var(--colorIdentificador);
+    padding: 1.5%; /*tienen un paddinf de l1,5% con respecto al acnho de su padre*/
+}
+.menu2 li{ /*todos los li de menu 2*/
+    padding-top: 11px; /*tienen n padding superior de 11px con el fin de que se alinea con el input*/
+
+}
+.menu2 > ul{ /* los hijos directos ul de menu2 */
+   display: flex; /*se vuelven cajas flexibles tiopo row*/
+   justify-content: space-around; /*sus elementos tienen ase hubanc de manera ordenada donde crea espacios entre elementos
+   sin embargo tambien un esppacio entre el borde del padre y estos mismos*/
+   padding: 0 5% 0 5%; /* el paddin de arriba e 0 el de la derecha es 5% del ancho del padre
+    el de abajo es 0 y el de la izquierda es 5%*/
+   list-style: none;
+}
+.menu2 > ul li:nth-child(1){ /*el li primer hijo de ul hijo directo de nmenu2*/
+   position: relative; /*tiene un valor relativo*/
+}
+.SubmenuCategorias{
+    display: none; /* esta clase se oculta*/
+    position: absolute; /*su poscion es abosluta */
+    top: 100%; /*se hubica por debajo del padre un 100% dfe su tamaño*/
+    left: 20%; /*se ubica 20% hacia a la derecha del tamaño del padre*/
+    background-color:var(--colorActivo);
+    border: 1px solid black;
+    min-width: 300px;
+    min-height: 250px; /*aqui crece cuando el tamaño de los elemento internos tambien*/
+}
+.SubmenuCategorias a{
+    display: block; /*les doy un tamaño de bloque para quue en modo caja sean mucho mas facil maipular*/
+    padding: 5px 10px;
+    color: black;
+}
+#menu-burger1:checked ~ .SubmenuCategorias { /*cuando el menu checkbox este checked busca a su hermano submenu y ejecuta las siguiente propiedades*/
+  /*"Selecciona todos los elementos con la clase ssubcategoria que sean hermanos de menuburger y que aparezcan después de menuburger dentro del mismo elemento padre."*/
+    display: block; /* se mostrarar el subcategoria hermano directo de menuburger cuando este con el checck*/
+}
+
+.menuInicioSesion{
+   display: none; /* el menu de inicio esta en diplay none*/
+   position: absolute; /* posicion abosluta  hijo de vul li nth 4*/
+   top: 80%; /* se posicion a un 80% por debajo del tamaño del padre*/
+   background-color: var(--colorActivo);
+   min-height: 80px; /*tamaño minimo de 80px*/
+   min-width: 100px;
+
+}
+.menuInicioSesion a{ /* todos los a de inicioSesion*/
+    padding: 5px 10px; 
+    color: black;
+}
+.menu2 >ul li:nth-child(4){
+    position: relative; /*el 4 hijo de ul hijo directo de menu2 tiene la poscion relativa par que su hjo absoluto tenga referencia */
+}
+.usuario:hover .menuInicioSesion{ /*nota esto de busqueda de lemento solo aplica a hijos o hermanos (segun selector) no puede ir hacia atras esta busqueda ni hacia otros elelmentos que no cumplan con la condicion*/
+    display: block; /*al tener el mouse sobre usuario busca a menuusuario  */
+}
+.menu2 > ul > li:hover{
+    text-decoration: underline;
+    transition: 0.3s; 
+}
+.barraBuscador{
+    padding-top: 0px !important; /*sobrepone esta propiedad aun cuando tiene una jeraraquia menor (no abusar de ello)*/
+}
+#buscador{
+    border: 0;
+    width: 400px;
+    height: 40px;
+}
+
+
+/* 
+CONFIGURACIONES EN EL MAIN
+*/
+
+/*
+Seccion de inicio
+*/
+#Inicio{ /**/
+    display: flex; /*es caja flexible*/
+    flex-direction: column; /*direccion de coñlumna*/
+    align-items: center; /*los tems son centrados de manera horiontal */
+     /*son centrados de manera vertical*/
+    
+}
+/*dentro de inicio*/
+#listaDeMarcas{
+    padding: 5%;
+    padding-top: 1%;
+}
+#listaDeMarcas ul{ /*todos los ul de listamarcas */
+    display: flex; /*se vulve caja flexible*/
+    gap: 20px; /*separacion de elemtenos con un espacio de 20px*/
+    text-align: center; /*el texto de sus elementos se centra*/
+    border-radius: 10px;
+    flex-wrap: wrap;
+    box-shadow: 0px 4px 20px #91c4cf; /*con esto le doy sombra confiuro los bordes */
+    background-color: var(--colorFondoBox) ;
+     justify-content: center;
+}
+#listaDeMarcas li{ /*todos los li de lista marcas hdescencdientes */
+    display: inline-block; /*se vuelven una cjaa pero que no ocupa todo la linea , es un line pero con posibilidad de manuipular su width y heigh*/
+    max-width: 15%;
+    height: 130px;
+    margin: 20px;
+    overflow: hidden; /*esta propiedad va en el contenedor padre*/
+     /*hago que los elementos del contenedor si son mas grandes que el padre se corten*/
+   
+  /*overflow: ;
+  Controla qué ocurre cuando el contenido es más grande que el contenedor.
+  
+  */
+    
+}
+#listaDeMarcas > ul > li > img{
+    width: 200px;
+   object-fit: contain;
+     height: 100%;
+}
+.inicio{
+    text-align: center;
+}
+
+/*configuracion de imagenes*/
+
+    /* fill Estira el contenido para llenar el contenedor (puede deformar).
+contain: Ajusta el contenido para que quepa entero, puede dejar espacio vacío.
+cover: Cubre el contenedor, puede recortar parte del contenido.
+none: No se ajusta; muestra en su tamaño natural.
+scale-down:Usa none o contain, el que requiera menos escalado.
+*/
+
+#canonlogo{
+    padding-top: 20%;
+}
+
+.ventana{
+    position: fixed;
+    background-color: red;
+    right: 0;
+    bottom: calc(40% +  5px); /*uso el calc para que la posicion se vea reflejada por un expresion*/
+    z-index: 1001;
+}
+
+
+
+/*
+NOTA:
+puedo usar este comando para definir mejor el scroll margin
+@media (max-width: 1024px) {
+  .header {
+    height: 80px;
+  }
+}
+  desbordamiento (overflow).
+
+*/
+
+/*SECCION PROMOCIONES*/
+
+.promAct{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--colorFondoBox);
+}
