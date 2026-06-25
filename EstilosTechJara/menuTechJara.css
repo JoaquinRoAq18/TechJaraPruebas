@@ -1,3 +1,58 @@
+:root{
+    --colorIdentificador: rgb(0, 101, 108); /*creacion de variables colores y fuentes de texto*/
+    --colorSecundario: rgb(52, 52, 58);
+    --colorInteraccion: rgb(188, 204, 204);
+    --colorActivo: aqua;
+    --fuenteLetra1: "Bricolage Grotesque", sans-serif;
+    --colorFondoBox: white;
+}
+*{ 
+    scroll-behavior: smooth; /*hago que al bajar por la pagina sea suave, notable con el redireccionamiento dentro de la pagina*/
+    box-sizing: border-box; /*aqui hago que el tamaño exacto de cada caja sea exacto a la hora de definir height y width, el padding y margin creo que
+     se adaptan para que se cumplan con los valores*/
+    margin: 0; /* aqui defino que todos los elementos en esta pagina tengan por defecto un margen y padding de 0*/
+    padding: 0;
+    
+}
+header{ /* en header*/
+    display: flex; /*hago que la caja osea el header sea flexible, puedo modiifcar lo elementos en una sola dimension*/
+    flex-direction: column; /*la direccion de los elementos es column por lo que se mostraran de manera vertical*/
+    color: azure; /*The color of the text will azure*/
+    position: sticky; /*hago que la posicion del header sea sticky, por lo que puedo fijarlo y ser relativo (fijo dentro del elemento padre, puedo moverlo sin que naduie ocupe su espacio original)*/
+    top: 0; /*aca presisamente lo configuro, al ser top 0 se posiciona arriba ya que no hay espacio que lo mueva hacia abajo*/
+    font-family: var(--fuenteLetra1); /*the font family has a variable valor*/
+}
+/*.checkMenus{
+    display: none;
+}*/ 
+input[type="checkbox"]{
+    display: none; /*todos los input tipo check, se ocultan, ya no se ven aunque esten ahi, si pueden ocupar su espacio */
+}
+section{
+    min-height: 100vh; /*la seccion tiene un tamaño minimo de 100 view height osea del tamaño de la panatlla esta púde crecer mientra mas contenido se agruege*/
+    scroll-margin-top: 160px; /*al hacer el scroll en direccionamiento interno el limite superior de la pagina quedara a 160px de la seccion*/
+}
+div{ /*igual al div*/
+    scroll-margin-top: 150px;
+}
+a{ /*a todos las etiquetas a*/
+    text-decoration: none; /*la decoracion del texto que tienen se le s quita*/
+    color: azure; 
+    
+}
+li{
+    list-style-type: none; /*todos las etiqeutas li se les quita si adorno de listado*/
+}
+footer{
+  background-color: black; /*el footer se le da un color de fondo negro*/
+  color: white;
+  text-align: center; /*se alinea el texto al medio*/
+}
+body{
+    background-color: var(--colorInteraccion);
+}
+
+
 
 /*MODIFICACIONES EN EL MENU 2*/
 #menu2{ /*el menu 2*/
